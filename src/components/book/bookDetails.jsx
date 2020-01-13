@@ -22,7 +22,9 @@ const BookDetails = props => {
 
   if (load) {
     const regex = /(<([^>]+)>)/gi;
-    const result = data.volumeInfo.description.replace(regex, "");
+    const result = data.volumeInfo.description
+      ? data.volumeInfo.description.replace(regex, "")
+      : null;
     return (
       <div className="Container">
         <img src={data.volumeInfo.imageLinks.thumbnail} alt="bookImage" />

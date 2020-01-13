@@ -2,18 +2,13 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./homePage.scss";
 import Button from "../button/readMore";
-import {
-  // Favorties,
-  addFavorite,
-  removeFavorite
-} from "../../redux/actions/actions";
+import { addFavorite, removeFavorite } from "../../redux/actions/actions";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 const Home = props => {
   const [book, setBook] = useState([]);
   const [load, setLoad] = useState(false);
   const [error, setError] = useState("");
-  const [id, setId] = useState([]);
   useEffect(() => {
     const apiUrl = `https://www.googleapis.com/books/v1/volumes?q=c++`;
     axios

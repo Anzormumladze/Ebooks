@@ -3,9 +3,7 @@ import { connect } from "react-redux";
 import axios from "axios";
 
 const Favorites = props => {
-  const [id, setId] = useState([]);
   const [data, setData] = useState([]);
-  const [error, setError] = useState("");
   const [load, setLoad] = useState(true);
 
   useEffect(() => {

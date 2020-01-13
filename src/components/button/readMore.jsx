@@ -1,5 +1,6 @@
 import React from "react";
 const readMore = props => {
+  console.log(props.props);
   return (
     <div id="container">
       <div className="buttonContainer">

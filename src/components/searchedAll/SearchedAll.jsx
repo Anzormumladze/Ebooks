@@ -1,11 +1,13 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import Button from "../button/readMore";
+
 import "./searched.scss";
 
 class SearchData extends Component {
   render() {
     const { searchData } = this.props;
-    const movieTv = searchData ? (
+    const Books = searchData ? (
       searchData.map(data => {
         if (data.id) {
           return (
@@ -18,21 +20,7 @@ class SearchData extends Component {
                 }
                 alt="searchedBooks"
               />
-              <div id="container">
-                <div className="buttonContainer">
-                  <button
-                    className="learn-more"
-                    onClick={() =>
-                      this.props.history.push("/bookDetail/" + data.id)
-                    }
-                  >
-                    <span className="circle">
-                      <span className="icon arrow"></span>
-                    </span>
-                    <span className="button-text">Read more</span>
-                  </button>
-                </div>
-              </div>
+              <Button props={this.props} id={data.id} />
             </div>
           );
         }
@@ -41,7 +29,7 @@ class SearchData extends Component {
       <div className="error">PLEASE SEARCH BOOKS</div>
     );
 
-    return <div className="searchedData">{movieTv}</div>;
+    return <div className="searchedData">{Books}</div>;
   }
 }
 
@@ -51,4 +39,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps)(SearchData);
+export default connect(mapStateToProps, null)(SearchData);
