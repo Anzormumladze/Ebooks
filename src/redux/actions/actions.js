@@ -4,7 +4,7 @@ export const SearchBooks = text => {
     fetch(apiUrl)
       .then(res => res.json())
       .then(data => {
-        dispatch({ type: "SEARCH_ALL", movie: data.items });
+        dispatch({ type: "SEARCH_ALL", book: data.items });
       });
   };
 };

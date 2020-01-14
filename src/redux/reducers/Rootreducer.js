@@ -10,7 +10,7 @@ export const rootReducer = (state = INITIALSTATE, action) => {
     case "SEARCH_ALL":
       return {
         ...state,
-        allstaff: action.movie
+        allstaff: action.book
       };
     case "ADD_FAVORITE":
       return {
